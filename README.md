@@ -34,12 +34,16 @@ cd ai-bot-10min
 bash
 
 python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # Use venv\Scripts\activate on Windows
 
 ```
 3. Install dependencies
 bash
+If you need to create a requirements.txt file, you can:
 
+Create an empty one: touch requirements.txt
+```
 pip install -r requirements.txt
 
 ```
@@ -49,6 +53,83 @@ Create a .env file in the root directory:
 ini
 
 OPENAI_API_KEY=your-openai-key-here
+```
+Add Your OpenAI API Key with a .env File
+
+✅ Step 1: Install python-dotenv
+If you haven’t already, install the package that lets Python read from .env files:
+
+bash
+
+pip install python-dotenv
+
+```
+✅ Step 2: Create the .env File
+In your project root folder, create a file named exactly .env (with no filename prefix).
+
+```
+touch .env
+
+```
+Example (Windows):
+
+Open Notepad
+
+Save as .env (with quotes to avoid .env.txt)
+
+Place it in your project root
+
+```
+Then, edit the file and add your OpenAI API key like this:
+
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+🔒 Replace the sk-xxxx... part with your actual OpenAI key from https://platform.openai.com/api-keys
+
+```
+✅ Step 3: Create .env.example file for your AI bot project for Sharing.
+This version is for your GitHub repo so others know what the .env should look like (but without your actual key):
+ Rename to .env and paste your OpenAI API key
+OPENAI_API_KEY=your-openai-api-key-here
+Save this as env.example in your project root.
+
+```
+✅ Step 4: Update .gitignore
+Make sure .env is listed so it never gets uploaded to GitHub.
+
+Add this to your .gitignore (if not already):
+
+.env
+```
+✅ Step 5: Use It in Your Code
+In your bot.py, load the key like this:
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+```
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+```
+🧪 Optional: Test It
+To make sure the .env is working, print the key (temporarily):
+
+print("Loaded API Key:", openai.api_key)
+Then run:
+
+python bot.py
+```
+You should see your key printed (just once, for testing — remove after).
+
+
+
+
+
 
 ```
 5. Run the chatbot
