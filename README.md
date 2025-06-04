@@ -162,5 +162,6 @@ python bot.py
 
 ```
 You: Tell me a joke.
+```
 Bot: Why don’t skeletons fight each other? They don’t have the guts.
 ```
