@@ -29,18 +29,20 @@ This project shows you how to build a simple AI chatbot using Python and OpenAI'
 ```bash
 git clone https://github.com/mathewgomas-alfred/ai-bot-10min.git
 cd ai-bot-10min
-
+```
 2. Set up virtual environment
 bash
 
 python -m venv venv
 source venv/bin/activate  # Use venv\Scripts\activate on Windows
 
+```
 3. Install dependencies
 bash
 
 pip install -r requirements.txt
 
+```
 4. Add your OpenAI API key
 Create a .env file in the root directory:
 
@@ -48,11 +50,14 @@ ini
 
 OPENAI_API_KEY=your-openai-key-here
 
+```
 5. Run the chatbot
 bash
 python bot.py
 
 🧠 Sample Interaction
 
+```
+```
 You: Tell me a joke.
 Bot: Why don’t skeletons fight each other? They don’t have the guts.
