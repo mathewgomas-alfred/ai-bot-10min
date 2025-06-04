@@ -28,7 +28,7 @@ This project shows you how to build a simple AI chatbot using Python and OpenAI'
 
 ```bash
 git clone https://github.com/mathewgomas-alfred/ai-bot-10min.git
-cd ai-bot-10min
+cd ai-bot
 ```
 2. Set up virtual environment
 bash
@@ -106,6 +106,7 @@ Add this to your .gitignore (if not already):
 ```
 ✅ Step 5: Use It in Your Code
 In your bot.py, load the key like this:
+```
 
 from dotenv import load_dotenv
 import os
