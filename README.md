@@ -110,10 +110,8 @@ Add this to your .gitignore (if not already):
 ```
 ✅ Step 5: Use It in Your Code
 In your bot.py, load the key like this:
-```
 from dotenv import load_dotenv
 import os
-
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 ```
