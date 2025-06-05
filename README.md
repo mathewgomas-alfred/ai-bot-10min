@@ -131,8 +131,6 @@ You can use a free model like mistralai/Mistral-7B-Instruct-v0.1 via Hugging Fac
 🪜 Steps:
 Install required packages:
 
-pip install transformers torch
-```
 ✅ When to Install CUDA & cuDNN
 You should install them if:
 
