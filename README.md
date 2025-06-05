@@ -34,8 +34,12 @@ cd ai-bot
 bash
 
 python -m venv venv
+```
 python3 -m venv venv
-source venv/bin/activate  # Use venv\Scripts\activate on Windows
+```
+source venv/bin/activate 
+```
+# Use venv\Scripts\activate on Windows
 
 ```
 3. Install dependencies
@@ -101,18 +105,11 @@ Save this as env.example in your project root.
 Make sure .env is listed so it never gets uploaded to GitHub.
 
 Add this to your .gitignore (if not already):
-
+```
 .env
 ```
 ✅ Step 5: Use It in Your Code
 In your bot.py, load the key like this:
-```
-
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
 ```
 from dotenv import load_dotenv
 import os
@@ -137,6 +134,7 @@ You can use a free model like mistralai/Mistral-7B-Instruct-v0.1 via Hugging Fac
 Install required packages:
 
 pip install transformers torch
+```
 
 Replace bot.py with this version:
 ```
@@ -155,11 +153,11 @@ while True:
 ```
 ```
 5. Run the chatbot
+```
 bash
 python bot.py
 
 🧠 Sample Interaction
-
 
 ```
 You: Tell me a joke.
