@@ -166,11 +166,13 @@ Make sure CUDA 12.1 is installed if you use the above.
 Run:
 ```
 nvcc --version
+```
 You should see something like:
 ✅ Next Steps
 Now that CUDA 12.2 is set up, let's confirm that PyTorch sees your GPU and is compatible with CUDA:
 
 python -c "import torch; print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0))"
+```
 Cuda compilation tools, release 12.1, V12.1.105
 If nvcc is not found, it's likely CUDA is not installed correctly or not in your PATH.
 If it prints True and your GPU name, then you're all set for:
