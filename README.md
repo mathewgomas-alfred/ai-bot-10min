@@ -140,10 +140,10 @@ You want faster processing (especially for image generation or deep learning)
 
 You're using libraries like torch or diffusers that can benefit from GPU acceleration
 🚀 Why GPU is Better for diffusers:
-Task               	  CPU                   	GPU (with CUDA/cuDNN)
-Image generation time	30–90+ seconds per image	 ~1–5 seconds per image
-Model loading time	  Slow                      	Much faster
-Batch processing capability	Very limited	       Easily handles larger batches
+Task               	           CPU                   	           GPU (with CUDA/cuDNN)
+Image generation time  	      30–90+ seconds per image	        ~1–5 seconds per image
+Model loading time	           Slow                          	  Much faster
+Batch processing capability	  Very limited	                    Easily handles larger batches
 
 📦 Models that benefit from GPU:
 Stable Diffusion
@@ -157,6 +157,7 @@ Any model using UNet, VAE, or CLIP backbones
 ⚙️ Sample GPU-compatible setup (if you want speed):
 
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
 pip install diffusers transformers accelerate
 ```
 Make sure CUDA 12.1 is installed if you use the above.
