@@ -206,6 +206,36 @@ while True:
     response = chatbot(user_input, max_new_tokens=100, do_sample=True, temperature=0.7)
     print("Bot:", response[0]['generated_text'].replace(user_input, '').strip())
 ```
+# Dockerfile
+FROM nvidia/cuda:12.2.0-base-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install Python 3.10 and pip
+RUN apt update && \
+    apt install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
+    apt update && \
+    apt install -y python3.10 python3.10-venv python3.10-distutils curl git && \
+    curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
+
+# Set Python 3.10 as default
+RUN ln -s /usr/bin/python3.10 /usr/bin/python
+
+# Install PyTorch (CUDA 12.2)
+RUN python -m pip install --upgrade pip && \
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu122
+
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# Optional: Set workdir
+WORKDIR /app
+docker build -t pytorch310 .
+docker run --gpus all -it pytorch310 bash
+conda create -n torch310 python=3.10 -y
+conda activate torch310
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu122
+
 ```
 5. Run the chatbot
 ```
